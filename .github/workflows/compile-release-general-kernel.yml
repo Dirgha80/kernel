@@ -13,10 +13,10 @@ on:
       kernel_source:
         description: "Select the kernel source"
         required: false
-        default: "bocahdeso"
+        default: "Dirgha80"
         type: choice
         options:
-          - unifreq
+          - Dirgha80
           - codesnas
           - bocahdeso
       kernel_version:
@@ -71,13 +71,13 @@ on:
       kernel_sign:
         description: "Set the kernel custom signature"
         required: false
-        default: "-MissQueenx+"
+        default: "-HOUJIE+"
         type: choice
         options:
           - -ophub
           - -Mystic+
           - -Synergy+
-          - -MissQueenx+
+          - -HOUJIE+
           - -XidzNetx+
           - -LiTeEditionx+
       kernel_config:
