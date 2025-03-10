@@ -74,20 +74,9 @@ on:
       kernel_sign:
         description: "Set the kernel custom signature"
         required: false
-        default: "-ophub"
-        type: choice
-        options:
-          - -ophub
-          - -happy-new-year
-          - -dragon-boat-festival
-          - -mid-autumn-festival
-          - -happy-national-day
-          - -merry-christmas
-          - -spring-plowing
-          - -summer-growing
-          - -autumn-harvesting
-          - -winter-storing
-          - -hj
+        default: "-Hj"
+        type: string
+        
       kernel_config:
         description: "Set the path of kernel .config"
         required: false
