@@ -19,6 +19,7 @@ on:
           - unifreq
           - codesnas
           - Dirgha80
+          - lcapriotti
       kernel_version:
         description: "Select kernel version"
         required: false
