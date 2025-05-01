@@ -85,6 +85,16 @@ on:
         options:
           - kernel-config/release/general
           - false
+      kernel_mu:
+        description: "Select the kernel mu"
+        required: false
+        default: "s905x4"
+        type: choice
+        options:
+          - s905x4
+          - stable
+          - dev
+          - beta   
 
 env:
   TZ: Asia/Jakarta
@@ -167,7 +177,7 @@ jobs:
         uses: ncipollo/release-action@main
         if: ${{ env.PACKAGED_STATUS }} == 'success' && !cancelled()
         with:
-          tag: kernel_s905x4
+          tag: kernel_${{ inputs.kernel_mu }}
           artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
           allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -177,5 +187,5 @@ jobs:
             - The kernel compilation toolchain: ${{ inputs.kernel_toolchain }}
             - The kernel version: ${{ inputs.kernel_version }}
             - The kernel nama: ${{ inputs.kernel_sign }}
-            - This is a `stable` kernel, which can be used in Armbian and OpenWrt.
+            - This is a `${{ inputs.kernel_mu }}` kernel, which can be used in Armbian and OpenWrt.
             - 这是`稳定版`内核，可以在 Armbian 和 OpenWrt 里使用。
